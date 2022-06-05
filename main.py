@@ -20,7 +20,7 @@ class TikTokUploader:
 
     def upload(self, viewSetting, videoPath, caption):
         #opens browser to tiktok homepage
-        self.driver.get('https://tiktok.com')
+        self.driver.get("https://tiktok.com")
         #navigates to the login page
         self.driver.get("https://www.tiktok.com/login/phone-or-email/email")
         #filling in the login form
@@ -34,6 +34,9 @@ class TikTokUploader:
         time.sleep(0.5)
         loginbutton = self.driver.find_element(By.CSS_SELECTOR, "#loginContainer > div.tiktok-xabtqf-DivLoginContainer.exd0a430 > form > button")
         loginbutton.click();
+        time.sleep(2)
+        #going to the upload video page
+        self.driver.get("https://www.tiktok.com/upload?lang=en")
         time.sleep(5)
         
 
